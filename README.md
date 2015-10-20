@@ -6,8 +6,7 @@ CKAN schemas using a JSON schema description. Custom
 template snippets for editing and display are also supported.
 
 [![Build Status](https://travis-ci.org/open-data/ckanext-scheming.svg?branch=master)](https://travis-ci.org/open-data/ckanext-scheming)
-[![Coverage](https://img.shields.io/coveralls/open-data/ckanext-scheming.svg?branch=master)](https://coveralls.io/r/open-data/ckanext-scheming)
-
+[![Coverage](https://coveralls.io/repos/open-data/ckanext-scheming/badge.svg?branch=master&service=github)](https://coveralls.io/github/open-data/ckanext-scheming?branch=master)
 
 Requirements
 ============
@@ -332,3 +331,20 @@ Help text may be provided in multiple languages like [label fields](#label).
 ### `help_inline`
 
 Display help text inline if set to `true`. Default is `false`.
+
+
+Running the Tests
+=================
+
+To run the tests, do:
+
+```nosetests --ckan --nologcapture --with-pylons=test.ini```
+
+and
+
+```nosetests --ckan --nologcapture --with-pylons=test_subclass.ini ckanext.scheming.tests.test_dataset_display ckanext.scheming.tests.test_form:TestDatasetFormNew ckanext.scheming.tests.test_dataset_logic```
+
+To run the tests and produce a coverage report, first make sure you have
+coverage installed in your virtualenv (``pip install coverage``) then run:
+
+```nosetests --ckan --nologcapture --with-pylons=test.ini --with-coverage --cover-package=ckanext.scheming --cover-inclusive --cover-erase --cover-tests```
